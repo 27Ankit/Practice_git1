@@ -1,0 +1,90 @@
+<div ng-app="angularApp" ng-controller="dataCtrl">
+  <label>Search:</label><br><br>
+  <label>Data Filtered on basis of first name : <input ng-model="searchText.first_name"></label><br><br>
+  <label>Data Filtered on basis of Last name : <input ng-model="searchText.last_name"></label><br><br>
+  <!-- <a href="smooth-scroll" target="target">Scroll to Target</a><br><br> -->
+
+
+
+  <table class="table" fixed-header>
+  <tr>
+  <th ng-click="sort('id')">ID</th>
+  <th ng-click="sort('first_name')">First Name</th>
+  <th ng-click="sort('last_name')">Last Name</th>
+  <th ng-click="sort('email')">Email</th>
+  <th>Gender</th>
+  </tr>
+  <tr dir-paginate=" x in myData | orderBy:sortKey:reverse | filter:searchText | productsPerPage:50">
+  <td>{{ x.id }} </td>
+  <td>{{ x.first_name }} </td>
+  <td>{{ x.last_name }}  </td>
+  <td>{{ x.email }} </td>
+  <td>{{ x.gender }} </td>
+  </tr>
+
+<div class="pagination"> <td class="pag" colspan="5">
+ <dir-pagination-controls  max-size="50" direction-links="true" boundary-links="true"></dir-pagination-controls>
+  </td>
+</div>
+</table>
+
+
+
+
+<form name="myForm">
+    <table>
+    <tr>
+        <td>
+          <label>FirstName:</label><br>
+          <input type="text" name="firstname" ng-model="firstname" required my-alpha><br><br>
+          <p style="color:red" ng-if= "!myForm.firstname.$valid" ng-show="!myForm.firstname.$valid && myForm.firstname.$dirty">Error</p><br>
+          <p style="color:green" ng-if="myForm.firstname.$valid" ng-hide ="myForm.firstname.$valid" >Valid</p>
+
+          <label>LastName:</label><br>
+          <input type="text" name="lastname" ng-model="lastname" required my-alpha><br><br>
+          <p style="color:red" ng-if="!myForm.lastname.$valid" ng-show="!myForm.lastname.$valid && myForm.lastname.$dirty">Error</p><br>
+          <p style="color:green" ng-if="myForm.lastname.$valid"  ng-hide="myForm.lastname.$valid">Valid</p>
+
+          <label>Address:</label><br>
+          <input type="text" name="address" ng-model="address" required my-alpha><br><br>
+          <p style="color:red" ng-if="!myForm.address.$valid" ng-show="!myForm.address.$valid && myForm.address.$dirty">Error</p><br>
+          <p style="color:green" ng-if="myForm.address.$valid"   ng-hide="myForm.address.$valid" >Valid</p>
+
+          <label>ContactNumber:</label><br>
+          <input type="text" name="contactnumber" ng-model="contactnumber" required my-number><br><br>
+          <p style="color:red" ng-if="myForm.contactnumber.$dirty && !myForm.contactnumber.$valid">Error</p><br>
+
+        </td>
+
+        <td>
+          <label>PhoneNumber:</label><br>
+          <input type="text" name="phonenumber" ng-model="phonenumber" required my-number><br><br>
+          <p style="color:red"   ng-if="!myForm.phonenumber.$valid" ng-show="!myForm.phonenumber.$valid && myForm.phonenumber.$dirty">Error</p><br>
+          <p style="color:green" ng-if="myForm.phonenumber.$valid" ng-hide="myForm.phonenumber.$valid">Valid</p>
+
+          <label>PinCode:</label><br>
+          <input type="text" name="pincode" ng-model="pincode" required my-number><br><br>
+          <p style="color:red"   ng-if="!myForm.pincode.$valid" ng-show="!myForm.pincode.$valid && myForm.pincode.$dirty">Error</p><br>
+          <p style="color:green" ng-if="myForm.pincode.$valid" ng-hide="myForm.pincode.$valid" >Valid</p>
+
+          <label>Email:</label><br>
+          <input type="text" name ="email" ng-model="email"required my-email ><br><br>
+          <p style="color:red"   ng-if="!myForm.email.$valid" ng-show="!myForm.email.$valid && myForm.email.$dirty">Error</p><br>
+          <p style="color:green" ng-if="myForm.email.$valid" ng-hide="myForm.email.$valid" >Valid</p>
+
+          <label>Gender Select:</label><br>
+          <select name="dropdown" ng-model="dropdown" required >
+            <option value="option-1">Male</option>
+            <option value="option-2">Female</option>
+          </select><br><br>
+          <p style="color:red"   ng-if="!myForm.dropdown.$valid" ng-show="!myForm.dropdown.$valid && myForm.dropdown.$dirty">Error</p><br>
+          <p style="color:green" ng-if="myForm.dropdown.$valid" ng-hide="myForm.dropdown.$valid" >Valid</p>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" ng-disabled="myForm.$invalid" class="button"></td>
+      </tr>
+    </table>
+  </form>
+
+</div>

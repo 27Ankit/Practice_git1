@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+    <script src="//code.jquery.com/jquery-2.0.3.min.js"></script>
+   <script src="//code.angularjs.org/1.2.16/angular.js"></script>
+
+    <style>
+    table,td{
+      padding: 20px;
+      text-align: left;
+      margin: auto;
+      border : 2px solid;
+      border-collapse: collapse;
+    }
+    label{
+      color: Green ;
+      font-size: 15px;
+      font-style: italic;
+    }
+  .button
+  {
+    padding: 20px;
+    margin : auto;
+  }
+  .table
+  {
+
+    width: 50%;
+    height:500px;
+
+  }
+  .pagination
+  {
+     display:inline-block;
+     margin:0px;
+     border:0px;
+  }
+  .pag
+  {
+  display:inline-flex;
+  }
+</style>
+  </head>
+
+<body ng-app="angularApp" ng-controller="dataCtrl">
+
+<div class="container">
+    <div ng-include="'views/main.html'" ></div>
+</div>
+ <script src="bower_components/angular/angular.js"></script>
+ <script src="scripts/controllers/adddirective.js"></script>
+ <script src="scripts/controllers/dirPagination.js"></script>
+ <script src="scripts/controllers/angu-fixed-header-table.js"></script>
+ <script src="scripts/controllers/jsonresponse.js"></script>
+
+ <!-- <script src="scripts/mock-data/app.js"></script> -->
+
+
+
+
+
+
+
+</body>
+</html>

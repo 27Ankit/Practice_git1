@@ -1,0 +1,39 @@
+------------------------------------------------------
+    TEXT1                 |         TEXT2
+    TEXT  Box             |       TEXT BOX
+                          |       ERROR :: ITALIC RED COLOR
+                          |
+                          |
+                          |
+                          |
+                          |
+                          |
+                          |
+------------------------------------------------------
+SUBMIT
+------------------------------------------------------
+
+Below each input element, show error if invalid
+
+
+TEXT (3)
+3 - 15 CHARACTERS (ALPHANUMERIC)
+
+NUMBER (3)
+5 - 10 DIGITS
+
+EMAIL (1)
+
+DROPDOWN (1)
+GENDER: MALE,FEMALE (NO SELECTION BY DEFAULT)
+
+SUBMIT (Enable only if all fields are valid)
+
+$dirty, $valid
+
+Task 2
+Download the Json data
+Represent the Data in the form of table
+Make a Search Option
+Apply filters on firstname and lastname
+Apply Pagination
