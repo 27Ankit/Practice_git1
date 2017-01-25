@@ -13,7 +13,7 @@ describe('Controller: dataCtrl', function () {
     scope = $rootScope.$new();
     dataCtrl = $controller('dataCtrl', {
       $scope: scope
-      $http : _http
+      $http : _http_
       // place here mocked dependencies
     });
   }));
